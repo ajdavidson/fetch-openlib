@@ -18,7 +18,7 @@ function App() {
   const [bookData, setBookData] = useState([]);
   const [query, setQuery] = useState("lord of the rings");
   //const [url, setUrl] = useState(`https://reststop.randomhouse.com/resources/titles?start=0&max=100&expandLevel=1&search=${query}`);
-  const [url, setUrl] = useState(`https://openlibrary.org/search.json?q=${query}`);
+  const [url, setUrl] = useState(`https://openlibrary.org/search.json?q=${query}&limit=25`);
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState('Empty Title');
   const [cover, setCover] = useState('Empty Link');
@@ -218,9 +218,9 @@ function App() {
         </Col>
         <Col className="d-flex align-items-end" style={{paddingBottom: '10px'}}>
           <InputGroup className="mb-3">
-            <InputGroup.Text style={{color: 'FF6600', background: 'none', width: '50px', border: '0'}}>
+            <InputGroup.Text style={{color: 'var(--opl-blue)', background: 'none', width: '50px', border: '0'}}>
               <Spinner className="spinner" id="spinner" size="sm" animation="border" role="status"
-                       style={{color: 'FF6600'}}/></InputGroup.Text>
+                       style={{color: 'var(--opl-blue)'}}/></InputGroup.Text>
             <InputGroup.Text>
               Keywords or Phrase:</InputGroup.Text>
             <FormControl
@@ -249,11 +249,11 @@ function App() {
           </InputGroup>
           {/*<InputGroup>*/}
           {/*  <Button variant="outline-secondary" id="button-addon1"*/}
-          {/*          style={{width: '50px', border: '0', color: 'FF6600'}}>*/}
+          {/*          style={{width: '50px', border: '0', color: 'var(--opl-blue)'}}>*/}
           {/*    <Spinner className="spinner" id="spinner" size="sm" animation="border" role="status"*/}
-          {/*             style={{color: 'FF6600'}}/>*/}
+          {/*             style={{color: 'var(--opl-blue)'}}/>*/}
           {/*  </Button>*/}
-          {/*  <InputGroup.Text style={{color: 'FF6600',background:'none'}}>*/}
+          {/*  <InputGroup.Text style={{color: 'var(--opl-blue)',background:'none'}}>*/}
           {/*    Enter Keywords</InputGroup.Text>*/}
           {/*  <FormControl*/}
           {/*    value={query}*/}
@@ -316,7 +316,7 @@ function App() {
         ))}
         </tbody>
         {/* <tfoot>
-          <tr style={{ color: 'FF6600' }}>
+          <tr style={{ color: 'var(--opl-blue)' }}>
             <th></th> */}
         {/* <th>Image</th> */}
         {/* <th>Title</th>
@@ -333,13 +333,13 @@ function App() {
       <Modal show={show} size="xl" onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title><h1><i className="fas fa-book"
-                              style={{color: 'FF6600'}}/> {title}</h1></Modal.Title>
+                              style={{color: 'var(--opl-blue)'}}/> {title}</h1></Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
           <ListGroup className="list-group-flush">
             <ListGroupItem><i className="fab fa-readme fa-3x"
-                              style={{color: 'FF6600', float: 'left', paddingRight: '10px'}}></i>
+                              style={{color: 'var(--opl-blue)', float: 'left', paddingRight: '10px'}}></i>
               <Card.Img src={`https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`}
                         style={{
                           width: '250px',
@@ -349,20 +349,20 @@ function App() {
               {/*<span dangerouslySetInnerHTML={{__html: copy}}/>*/}
               <pre>{bookData}</pre>
             </ListGroupItem>
-            {/*<ListGroupItem><i class="fas fa-user" style={{color: 'FF6600'}}></i> <span*/}
+            {/*<ListGroupItem><i class="fas fa-user" style={{color: 'var(--opl-blue)'}}></i> <span*/}
             {/*  dangerouslySetInnerHTML={{__html: bio}}/></ListGroupItem>*/}
           </ListGroup>
         </Modal.Body>
         <Modal.Footer>
-          <Modal.Title style={{paddingRight: '20px'}}><i class="fas fa-bookmark" style={{color: 'FF6600'}}></i> {format}
+          <Modal.Title style={{paddingRight: '20px'}}><i class="fas fa-bookmark" style={{color: 'var(--opl-blue)'}}></i> {format}
           </Modal.Title>
           <Modal.Title style={{paddingRight: '20px'}}><i className="fas fa-book-open"
-                                                         style={{color: 'FF6600'}}></i> {pages} pgs </Modal.Title>
+                                                         style={{color: 'var(--opl-blue)'}}></i> {pages} pgs </Modal.Title>
           <Modal.Title style={{paddingRight: '20px'}}><i class="fas fa-calendar-alt"
-                                                         style={{color: 'FF6600'}}></i> {year} </Modal.Title>
-          <Modal.Title style={{paddingRight: '20px'}}><i class="fas fa-barcode" style={{color: 'FF6600'}}></i> {isbn}
+                                                         style={{color: 'var(--opl-blue)'}}></i> {year} </Modal.Title>
+          <Modal.Title style={{paddingRight: '20px'}}><i class="fas fa-barcode" style={{color: 'var(--opl-blue)'}}></i> {isbn}
           </Modal.Title>
-          <Modal.Title style={{color: 'FF6600'}}> ${price} </Modal.Title>
+          <Modal.Title style={{color: 'var(--opl-blue)'}}> ${price} </Modal.Title>
         </Modal.Footer>
       </Modal>
 

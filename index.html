@@ -17,18 +17,18 @@
 <style>
     :root {
 
-        --opl-blue: #518abe;
+        --opl-blue: #518abe; /* var(--opl-blue) */
 
     }
     .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
         background: none;
         color: black !important;
         border-radius: 4px;
-        border: 1px solid #FF6600;
+        border: 1px solid #var(--opl-blue);
     }
 
     .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-        background: #FF6600;
+        background: #var(--opl-blue);
         color: rgb(255, 255, 255) !important;
         border-radius: 4px;
         border: 1px solid #000000;
@@ -36,7 +36,7 @@
     }
 
     .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-        background: #FF6600;
+        background: #var(--opl-blue);
         color: rgb(0, 0, 0) !important;
         border-radius: 4px;
         border: 1px solid #000000;
@@ -107,7 +107,7 @@
             //         "scrollY": "60vh",
             //         "scrollCollapse": true,
             //         language: {
-            //             search: `<i class="fas fa-search fa-lg" style="color: #FF6600"></i> ` /*Empty to remove the label*/
+            //             search: `<i class="fas fa-search fa-lg" style="color: #var(--opl-blue)"></i> ` /*Empty to remove the label*/
             //         },
             //         "columns": [
             //             {"width": "1%"},
