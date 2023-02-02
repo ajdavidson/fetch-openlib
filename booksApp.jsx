@@ -86,7 +86,7 @@ function App() {
           // "scrollY": 450,
           // "scrollCollapse": true,
           language: {
-            search: `<i class="fas fa-search fa-lg" style="color: #FF6600"></i> `,/*Empty to remove the label*/
+            search: `<i class="fas fa-search fa-lg" style="color: var(--opl-blue)"></i> `,/*Empty to remove the label*/
             searchPlaceholder: "Search Table",
           },
           "columns": [
@@ -213,7 +213,7 @@ function App() {
 
       <Row>
         <Col>
-          <Image src="PRH-logo.png" width="250px"/>
+          <Image src="openlib-logo.png" width="250px"/>
 
         </Col>
         <Col className="d-flex align-items-end" style={{paddingBottom: '10px'}}>
@@ -232,7 +232,7 @@ function App() {
               aria-label="Recipient's username with two button addons"
             />
             <Button
-              style={{backgroundColor: 'FF6600', color: 'white'}}
+              style={{backgroundColor: 'var(--opl-blue)', color: 'white'}}
               variant="outline-secondary"
               id="button-load"
               onClick={() => {
@@ -281,7 +281,7 @@ function App() {
       <table id="books" class="display" style={{width: "100%"}}>
         {/*<caption>Result Table for Keyword: {query} </caption>*/}
         <thead>
-        <tr style={{color: 'FF6600'}}>
+        <tr style={{color: 'var(--opl-blue)'}}>
           <th></th>
           <th>Title</th>
           <th>Author</th>
@@ -302,7 +302,7 @@ function App() {
                         handleShow(t.title, t.number_of_pages_median, t.first_publish_year, t.isbn, t.key);
                         console.log('Zoom...');
                       }
-                      }><i class="fas fa-search-plus" style={{color: 'FF6600'}}></i>
+                      }><i class="fas fa-search-plus" style={{color: 'var(--opl-blue)'}}></i>
               </Button>
             </td>
             {/* <td><img height="55px" src={t['@uri']} /></td> */}
