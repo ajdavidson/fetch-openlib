@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    function getBooks(){
+      fetch('https://openlibrary.org/search.json?q=lord')
+      .then(res => res.json())
+      .then(response => {
+        for(let i=0; i<20; i++  ){
+document.getElementById("output").innerHTML+=response.docs[i].title+"<br/>"
+        }
+      })
+
+
+
+    }
+  </script>
+</head>
+<body>
+<button onclick="getBooks()">Get Books</button>
+<div id="output"></div>
+</body>
+</html>

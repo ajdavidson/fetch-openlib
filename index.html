@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Fetch Penguin</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.css" />
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        background: none;
+        color: black !important;
+        border-radius: 4px;
+        border: 1px solid #FF6600;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        background: #FF6600;
+        color: rgb(255, 255, 255) !important;
+        border-radius: 4px;
+        border: 1px solid #000000;
+
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        background: #FF6600;
+        color: rgb(0, 0, 0) !important;
+        border-radius: 4px;
+        border: 1px solid #000000;
+
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+        background: none;
+        color: black !important;
+    }
+
+    #loading{
+        position: absolute;
+        top: 50%;
+        left: 40%;
+    }
+    #books caption {
+        caption-side: top;
+        text-align: center;
+        width: 100%;
+    }
+    #button-load:hover{
+        background-color: white!important;
+        color: #FF6600!important;
+    }
+
+    pre {
+        /*outline: 1px solid #ccc;*/
+        padding: 5px;
+        margin: 5px;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+</style>
+
+<body>
+<div id="loading"><b>Fetching results from Penguin Publishing Server...</b></div>
+    <!-- We will put our React component inside this div. -->
+    <div id="root"></div>
+
+    <!-- Load React. -->
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router@5/umd/react-router.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-router-dom@5/umd/react-router-dom.min.js"></script>
+    <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js" crossorigin></script>
+    <!-- Load our Axios and our component. -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="booksApp.jsx" defer type="text/babel"></script>
+
+    <script>
+        $(document).ready(function() {
+            if ($.fn.dataTable.isDataTable('#books')) {
+                $("#books").DataTable().destroy();
+            }
+
+            // $.fn.dataTable.isDataTable('#books')
+            //     $('#books').DataTable({
+            //         destroy: true,
+            //         "order": [1, 'asc'],
+            //         "autoWidth": false,
+            //         "scrollY": "60vh",
+            //         "scrollCollapse": true,
+            //         language: {
+            //             search: `<i class="fas fa-search fa-lg" style="color: #FF6600"></i> ` /*Empty to remove the label*/
+            //         },
+            //         "columns": [
+            //             {"width": "1%"},
+            //             {"width": "40%"},
+            //             {"width": "20%"},
+            //             {"width": "20%"},
+            //             {"width": "05%"},
+            //             {"width": "05%"},
+            //             {"width": "05%"},
+            //             // { "width": "20px" }
+            //         ],
+            //
+            //     });
+
+
+        } );
+
+    </script>
+</body>
